@@ -1,1 +1,1 @@
-# math-quiz-
+# math-quiz
