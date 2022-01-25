@@ -8,10 +8,9 @@ class GameService {
         let sign = signs[Math.floor(Math.random() * 2)]
         let number1 = Math.floor(Math.random() * 11) + 1
         let number2 = Math.floor(Math.random() * 11) + 1
-        if (number1 < number2) {
-            if (sign == "-")
-                sign = signs[0]
-        }
+        if (number1 < number2 && sign == "-") 
+            sign = signs[0]
+            
         problem.innerHTML = `${number1} ${sign} ${number2} = ?`
         
         if(sign === "+")
