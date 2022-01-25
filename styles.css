@@ -25,6 +25,7 @@ body {
     "Problem Option"
     "score Option";
 }
+
 .score {
   height: 15vh;
   grid-area: score;
@@ -32,6 +33,7 @@ body {
   width: 100%;
   background: var(--grey);
 }
+
 .problem-container {
   grid-area: Problem;
   background: rgb(235, 235, 235);
@@ -65,7 +67,8 @@ body {
   user-select: none;
   cursor: pointer;
 }
-.score .main {
+
+.score {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,12 +76,15 @@ body {
   gap: 20%;
   height: 100%;
 }
-.score .main .correct {
+
+.score .correct {
   color: rgb(0, 175, 0);
 }
-.score .main .incorrect {
+
+.score .incorrect {
   color: var(--red);
 }
+
 .options-container .option:nth-child(1) {
   background: var(--red);
 }
@@ -90,6 +96,7 @@ body {
 .options-container .option:nth-child(3) {
   background: var(--yellow);
 }
+
 @media only screen and (max-width: 1280px) {
   .main-container {
     grid-template-columns: 1fr 1fr;
@@ -98,35 +105,43 @@ body {
       "Option Option"
       "score score";
   }
+
   .problem-container {
     height: 50vh;
     font-size: 6em;
   }
+
   .score {
     height: 10vh;
   }
+
   .options-container {
     height: 40vh;
   }
+
   .options-container {
     flex-direction: row;
     gap: 0;
     justify-content: space-evenly;
   }
+
   .options-container .option {
     width: 30%;
     font-size: 4em;
   }
 }
+
 @media only screen and (max-width: 620px) {
   .problem-container {
     font-size: 4em;
   }
 }
+
 @media only screen and (max-width: 400px) {
   .problem-container {
     font-size: 2em;
   }
+
   .options-container .option {
     font-size: 1.5em;
   }
