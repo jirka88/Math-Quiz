@@ -4,12 +4,16 @@ const options = document.querySelectorAll('.option-value')
 
 class GameService { 
     newProblem() {
-        let signs = ["+","-"]
+        let signs = ["+", "-"]
         let sign = signs[Math.floor(Math.random() * 2)]
-        let number1 = Math.floor(Math.random() * 101)
-        let number2 = Math.floor(Math.random() * 101)
+        let number1 = Math.floor(Math.random() * 11) + 1
+        let number2 = Math.floor(Math.random() * 11) + 1
+        if (number1 < number2) {
+            if (sign == "-")
+                sign = signs[0]
+        }
         problem.innerHTML = `${number1} ${sign} ${number2} = ?`
-
+        
         if(sign === "+")
             this.result = number1 + number2
         else
@@ -24,7 +28,7 @@ class GameService {
             if(count === randomRight)
                 option.innerHTML = this.result
             else
-                option.innerHTML = Math.floor(Math.random() * 101)
+                option.innerHTML = Math.floor(Math.random() * 11) + 1
 
             count++
         })
@@ -46,4 +50,3 @@ window.onload = function () {
     })
    gameService.newProblem()
 }
-
