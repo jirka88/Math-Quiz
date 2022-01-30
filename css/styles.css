@@ -132,14 +132,20 @@ body {
 @media only screen and (max-height: 500px) {
   .problem-container {
     height: 45vh;
+    font-size: 4em;
   }
   .options-container {
     height: 40vh;
   }
   .score {
     height: 15vh;
+    font-size: 1.5em;
+  }
+  .options-container .option {
+    font-size: 3em;
   }
 }
+
 @media only screen and (max-width: 620px) {
   .problem-container {
     font-size: 4em;
