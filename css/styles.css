@@ -157,11 +157,11 @@ body {
 
 @media only screen and (max-width: 425px) {
   .problem-container {
-    font-size: 2em;
+    font-size: 12vw;
   }
   .options-container .option {
-    font-size: 1.5em;
     height: 25vh;
+    font-size: 8vw;
   }
   .score p {
     font-size: 6vw;
