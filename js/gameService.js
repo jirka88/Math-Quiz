@@ -1,4 +1,4 @@
-export class GameService {
+export default class GameService {
 
     problem = document.querySelector('.problem')
     optionDivs = document.querySelectorAll('.option')

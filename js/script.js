@@ -1,4 +1,4 @@
-import { GameService } from "./gameService.js";
+import GameService from "./gameService.js";
 
 const gameService = new GameService()
 

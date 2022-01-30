@@ -27,7 +27,7 @@ body {
 }
 
 .score {
-  height: 15vh;
+  height: 10vh;
   grid-area: score;
   margin: 0;
   width: 100%;
@@ -39,7 +39,7 @@ body {
   background: rgb(235, 235, 235);
   display: flex;
   flex-direction: column;
-  height: 85vh;
+  height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 8em;
@@ -74,7 +74,6 @@ body {
   justify-content: center;
   font-size: 2em;
   gap: 20%;
-  height: 100%;
 }
 
 .score .correct {
@@ -130,19 +129,41 @@ body {
     font-size: 4em;
   }
 }
-
+@media only screen and (max-height: 500px) {
+  .problem-container {
+    height: 45vh;
+  }
+  .options-container {
+    height: 40vh;
+  }
+  .score {
+    height: 15vh;
+  }
+}
 @media only screen and (max-width: 620px) {
   .problem-container {
     font-size: 4em;
   }
+  .options-container .option {
+    font-size: 2.5em;
+  }
+  .score {
+    gap: 10%;
+  }
+  .score p {
+    font-size: 0.8em;
+  }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 425px) {
   .problem-container {
     font-size: 2em;
   }
-
   .options-container .option {
     font-size: 1.5em;
+    height: 25vh;
+  }
+  .score p {
+    font-size: 6vw;
   }
 }
