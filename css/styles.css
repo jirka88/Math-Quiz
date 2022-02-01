@@ -19,65 +19,105 @@ body {
 }
 
 header {
-    height: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header h1 {
-    margin: 0;
-    text-align: center;
-    font-size: 100px;
+  margin: 0;
+  text-align: center;
+  font-size: 100px;
 }
 .main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .levels-container {
-    height: 70%;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 30px;
-    flex-wrap: wrap;
+  height: 70%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .level-card {
-    height: 250px;
-    width: 250px;
-    background: var(--red);
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    cursor: pointer;
-    transition: .2s ease-in-out all;
+  height: 250px;
+  width: 250px;
+  background: var(--grey);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.2s ease-in-out all;
 }
 
+.level-card:nth-child(1) {
+  /*dočasně */
+  background: var(--red);
+}
 .level-card:hover {
-    border-radius: 50%;
+  background: var(--red);
 }
 
 .level-card p {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 @media only screen and (max-width: 1720px) {
-    .levels-container {
-        width: 100%;
-    }
+  .levels-container {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1440px) {
-    .levels-container {
-        width: 100%;
-    }
-    .level-card {
-        width: 200px;
-        height: 200px;
-    }
+  .level-card {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  header {
+    height: 20%;
+  }
+  header h1 {
+    font-size: 4em;
+  }
+}
+@media only screen and (max-width: 620px) {
+  header {
+    height: 20%;
+  }
+  header h1 {
+    font-size: 3em;
+  }
+  .levels-container {
+    gap: 20px;
+  }
+  .level-card {
+    width: 150px;
+    height: 150px;
+  }
+  .level-card p {
+    font-size: 3em;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .level-card {
+    width: 40vw;
+    height: 40vw;
+  }
+  .level-card p {
+    font-size: 15vw;
+  }
+}
+@media only screen and (max-height: 600px) {
+  header {
+    height: 150px;
+  }
 }
