@@ -59,10 +59,6 @@ header h1 {
   transition: 0.2s ease-in-out all;
 }
 
-.level-card:nth-child(1) {
-  /*dočasně */
-  background: var(--red);
-}
 .level-card:hover {
   background: var(--red);
 }

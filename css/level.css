@@ -22,10 +22,25 @@ body {
   display: grid;
   grid-template-columns: 1fr 0.3fr;
   grid-template-areas:
+     "level Option"
     "Problem Option"
     "score Option";
 }
-
+.level {
+  height: 10vh;
+  width:100%;
+  margin: 0;
+  grid-area: level;
+  font-size: 2em;
+}
+.level p {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin:0;
+  width: 100%;
+  height: 100%;
+}
 .score {
   height: 10vh;
   grid-area: score;
@@ -39,7 +54,7 @@ body {
   background: rgb(235, 235, 235);
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 80vh;
   align-items: center;
   justify-content: center;
   font-size: 8em;
@@ -100,6 +115,7 @@ body {
   .main-container {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
+       "level level"
       "Problem Problem"
       "Option Option"
       "score score";
@@ -109,15 +125,12 @@ body {
     height: 50vh;
     font-size: 6em;
   }
-
   .score {
     height: 10vh;
   }
-
   .options-container {
-    height: 40vh;
+    height: 30vh;
   }
-
   .options-container {
     flex-direction: row;
     gap: 0;
@@ -125,22 +138,28 @@ body {
   }
 
   .options-container .option {
-    width: 30%;
+    width: 25%;
+    height: 20vh;
     font-size: 4em;
   }
 }
 @media only screen and (max-height: 500px) {
   .problem-container {
-    height: 45vh;
+    height: 40vh;
     font-size: 4em;
   }
   .options-container {
-    height: 40vh;
+    height: 30vh;
   }
   .score {
     height: 15vh;
     font-size: 1.5em;
   }
+  .level {
+    height: 15vh;
+    font-size: 1.5em;
+  }
+
   .options-container .option {
     font-size: 3em;
   }
@@ -156,7 +175,7 @@ body {
   .score {
     gap: 10%;
   }
-  .score p {
+  .score p, .level p {
     font-size: 0.8em;
   }
 }
@@ -165,8 +184,11 @@ body {
   .problem-container {
     font-size: 12vw;
   }
-  .options-container .option {
+  .options-container .option{
     height: 25vh;
+    font-size: 8vw;
+  }
+  .level p  {
     font-size: 8vw;
   }
   .score p {

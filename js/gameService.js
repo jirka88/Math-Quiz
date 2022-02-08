@@ -1,19 +1,18 @@
-export default class GameService {
 
+export default class GameService {
     problem = document.querySelector('.problem')
     optionDivs = document.querySelectorAll('.option')
     options = document.querySelectorAll('.option-value')
     correct = document.querySelector(".correct");
     incorrect = document.querySelector(".incorrect");
-
+    levelHeading = document.querySelector(".TextLevl");
     correctCount = 0;
     incorrectCount = 0;
     currentProblem
 
     newProblem(problem) {
-
+        this.levelHeading.innerHTML = "Level " + problem;
         this.currentProblem = problem
-
         let number1
         let number2
         let signs = ["+", "-", "×", ":"]
