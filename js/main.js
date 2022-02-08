@@ -1,7 +1,6 @@
-"use strict";
-
 const levels = document.querySelector('.levels-container');
 var cards = []
+const url = new URL("http://127.0.0.1:5500/level.html");
 
 window.onload = () => {
     for (let i = 0; i < 10; i++) {
@@ -21,14 +20,15 @@ function getCard(i) {
     cards.push(card)
 }
 
-function onLevelClick(i) {
-    console.log(i)
+function onLevelClick(lvl) {
+    url.searchParams.set('lvl', lvl);
+    window.location.href = url;
 }
 
 function addEvents() {
     for (const card of cards) {
         card.addEventListener('click', () => {
-          console.log(card.innerText);
+          onLevelClick(card.innerText)
         })
       }
 }

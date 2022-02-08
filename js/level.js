@@ -8,5 +8,6 @@ window.onload = function () {
             gameService.compareResultWithOption(option.getAttribute("value"))
         })
     })
-    gameService.newProblem()
+    let params = new URLSearchParams(window.location.search);
+    gameService.newProblem(params.get('lvl'))
 }
