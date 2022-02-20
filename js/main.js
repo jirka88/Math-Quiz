@@ -1,21 +1,22 @@
-import getExpires from "./cas.js";
+import getExpires from "./time.js";
 
-let level;
+let level = 0;
 
 const levels = document.querySelector('.levels-container');
 var cards = []
 const url = new URL("http://127.0.0.1:5500/level.html");
 
 window.onload = () => {
-    let cookie = decodeURIComponent(document.cookie).split("=")[1]; 
+    let cookie = setCookie();
+    if (cookie === undefined) {
+        document.cookie = "level=1;expires=" + getExpires() + ";" + "Secure"; //pokud neexsituje cookies => vytvoří jí
+        cookie = setCookie();
+    }      
     level = cookie;
     for (let i = 0; i < 10; i++) {
         getCard(i + 1)
     }
     addEvents()
-    if (cookie === undefined) {
-        document.cookie = "level=1;expires=" + getExpires() + ";" + "Secure"; //pokud neexsituje cookies => vytvoří jí
-    }      
 }
 
 function getCard(i) {
@@ -33,7 +34,7 @@ function getCard(i) {
 }
 
 function onLevelClick(lvl) {
-    if(level >= lvl) {
+    if(Number(level) >= Number(lvl)) {
         url.searchParams.set('lvl', lvl);
         window.location.href = url;
     }
@@ -48,4 +49,7 @@ function addEvents() {
           onLevelClick(card.innerText)
         })
       }
+}
+function setCookie() {
+   return decodeURIComponent(document.cookie).split("=")[1]; 
 }

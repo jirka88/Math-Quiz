@@ -1,4 +1,4 @@
-
+import getExpires from "./time.js";
 export default class GameService {
     problem = document.querySelector('.problem')
     optionDivs = document.querySelectorAll('.option')
@@ -68,14 +68,14 @@ export default class GameService {
         })
     }
 
-    compareResultWithOption(optionValue, expires) {
+    compareResultWithOption(optionValue) {
         if (optionValue == "Correct") {
             this.correctCount++
             this.correct.innerHTML = `${optionValue}: ${this.correctCount}`
 
             if (this.correctCount === 5) {
                 if(Number(this.currentProblem) >= Number(decodeURIComponent(document.cookie).split("=")[1])) { 
-                    document.cookie = "level=" + (Number(this.currentProblem) + 1) + ";" + "expires=" + expires + ";" + "Secure"; 
+                    document.cookie = "level=" + (Number(this.currentProblem) + 1) + ";" + "expires=" + getExpires()+ ";" + "Secure"; 
                 }
                 this.nextLevel()
             }
