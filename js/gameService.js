@@ -68,13 +68,17 @@ export default class GameService {
         })
     }
 
-    compareResultWithOption(optionValue) {
+    compareResultWithOption(optionValue, expires) {
         if (optionValue == "Correct") {
             this.correctCount++
             this.correct.innerHTML = `${optionValue}: ${this.correctCount}`
 
-            if (this.correctCount == 5)
+            if (this.correctCount === 5) {
+                if(Number(this.currentProblem) >= Number(decodeURIComponent(document.cookie).split("=")[1])) { 
+                    document.cookie = "level=" + (Number(this.currentProblem) + 1) + ";" + "expires=" + expires + ";" + "Secure"; 
+                }
                 this.nextLevel()
+            }
         }
         else {
             this.incorrectCount++;
